@@ -1,0 +1,43 @@
+SIMULADOR DE ENLACES — PROYECTO DE TELECOMUNICACIONES
+
+1. Requisitos: Python 3.9 o superior y un navegador. No requiere paquetes adicionales ni Internet.
+2. Extraer toda esta carpeta del ZIP. Ejecutar ABRIR_SIMULADOR.bat.
+3. Cargar el escenario de 10 o 35 km, modificar parámetros y pulsar Calcular.
+4. La sensibilidad queda vacía porque no se ha seleccionado un receptor real.
+   Al introducirla se calcula Fm. La reserva respecto a la SNR objetivo se muestra
+   siempre por separado. Un Fm calculado con sensibilidad supuesta no es validación.
+5. Exportar resultados guarda CSV, JSON y un informe HTML en la carpeta elegida.
+   Abrir resultados/informe.html permite ver los ocho escenarios ya calculados.
+
+Para uso por consola:
+  python simulador.py --batch
+  python simulador.py --test
+  python simulador.py --batch --salida mis_resultados
+
+El programa reemplaza resultados.csv, resultados.json e informe.html cuando se
+exporta en una carpeta que ya contiene esos nombres. Elegir una carpeta nueva
+para conservar versiones de escenarios.
+
+ALCANCE
+Calcula ganancias de antenas, FSPL, P recibida, PIRE, C/N, reserva de SNR,
+Fm opcional, Fresnel al centro, curvatura de referencia, Shannon y QAM ideal.
+C/N y SNR se igualan en este modelo sin interferencia y con el mismo ancho de ruido.
+La tasa QAM ideal usa B/(1+alfa)*log2(M), no 2*B_RF*log2(M).
+No estima throughput real ni representa un simulador de paquetes o de fallas.
+No realiza pruebas de IPS, BCP ni failover; esas pruebas requieren laboratorio.
+No prueba línea de vista real ni disponibilidad del 99.97 %. Los 20 dB adicionales
+son un escenario matemático, no una lluvia de una frecuencia estadística conocida.
+Los parámetros de potencia, antenas y pérdidas proceden del diseño académico
+del capítulo III; deben contrastarse con las fichas de equipos e instalación.
+
+REFERENCIAS
+UIT-R P.525: https://www.itu.int/rec/R-REC-P.525/en
+UIT-R P.526: https://www.itu.int/rec/R-REC-P.526/en
+UIT-R P.530: https://www.itu.int/rec/R-REC-P.530/en
+Capítulo II del informe: convención QAM de 40 MHz y 16 estados.
+
+ENTREGABLES
+simulador.py: motor de cálculo, servidor local, exportación y verificaciones.
+interfaz.html: formulario local mostrado en el navegador.
+resultados/: ocho escenarios ejecutados y sus datos reproducibles.
+verificacion.txt: registro de las verificaciones automáticas realizadas.
