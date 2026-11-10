@@ -1,10 +1,10 @@
 # Simulador de enlaces de telecomunicaciones
 
-Herramienta académica para los enlaces de 10 y 35 km del proyecto multisede. Incluye el simulador original de Richard y los complementos del cierre del informe.
+Herramienta académica desarrollada para el proyecto final de Telecomunicaciones. Permite evaluar los radioenlaces de 10 y 35 km y reproducir sus cálculos, resultados y verificaciones.
 
 ## Autoría
 
-Proyecto académico de Diego Monterroso y Richard Anthony De León. El simulador original de Richard se conserva con ajustes de compatibilidad y complementos del informe. Repositorio de origen: https://github.com/RichardAnthonyDeLeon/simulador-de-enlaces
+Desarrollado por Diego Monterroso y Richard Anthony De León como parte del proyecto final de Telecomunicaciones. El sistema se publica en GitHub para facilitar su descarga, revisión y ejecución local.
 
 ## Ejecutar la interfaz
 
@@ -15,7 +15,7 @@ Se necesita Python 3.9 o superior y un navegador. No se requieren paquetes exter
 3. En otros sistemas, ejecutar `python3 simulador.py`.
 4. Elegir el caso, modificar parámetros y pulsar **Calcular**. Para calcular Fm, introducir la sensibilidad del receptor.
 
-Los ocho casos originales se conservan en `resultados/informe.html` (incluido en el ZIP completo). Descargar el repositorio y abrir ese archivo localmente permite consultar la tabla y el gráfico sin ejecutar Python. GitHub muestra el código HTML y no ejecuta la aplicación.
+Los ocho escenarios de referencia se incluyen en `resultados/informe.html` (incluido en el ZIP completo). Descargar el repositorio y abrir ese archivo localmente permite consultar la tabla y el gráfico sin ejecutar Python. GitHub muestra el código HTML y no ejecuta la aplicación.
 
 ## Instrucciones para la docente
 
@@ -38,7 +38,7 @@ python casos_finales.py
 
 Se generan tres casos con sensibilidad de referencia de −79.5 dBm en `resultados_finales/`: 10 km, línea base de 35 km y variante reforzada de 35 km. También se incluyen resultados ya generados.
 
-La variante reforzada usa 6 GHz, 40 MHz, 16-QAM, antenas de 1.80 m y potencia de 28 dBm. Para reproducirla en la interfaz, cargar 35 km e introducir esos diámetros, potencia y sensibilidad. Su Fm calculado es 42.31 dB, frente a 38.49 dB exigidos por el escenario climático del complemento. Los cálculos originales de 1.20 m y 23 dBm permanecen como referencia, no como el caso reforzado.
+La variante reforzada usa 6 GHz, 40 MHz, 16-QAM, antenas de 1.80 m y potencia de 28 dBm. Para reproducirla en la interfaz, cargar 35 km e introducir esos diámetros, potencia y sensibilidad. Su Fm calculado es 42.31 dB, frente a 38.49 dB exigidos por el escenario climático del complemento. Los cálculos de referencia de 1.20 m y 23 dBm permanecen como referencia, no como el caso reforzado.
 
 ## Complementos
 
@@ -48,7 +48,7 @@ La variante reforzada usa 6 GHz, 40 MHz, 16-QAM, antenas de 1.80 m y potencia de
 - `complemento/topologia.svg` (incluido en el ZIP completo): topología lógica propuesta.
 - [`Complemento_Telecomunicaciones.zip`](Complemento_Telecomunicaciones.zip): copia descargable del paquete de pruebas, registros y topología. Desde GitHub, abrir el archivo y usar la descarga del archivo original.
 
-El complemento incluye una copia identificada del motor original (`simulador_revisado.py`) para reproducir sus pruebas. El informe Word/PDF y la coevaluación se entregan por separado en el paquete final para Canvas.
+El módulo de verificación utiliza el motor de cálculo (`simulador_revisado.py`) para reproducir sus pruebas. El informe Word/PDF y la coevaluación se entregan por separado en el paquete final para Canvas.
 
 ## Reproducir las verificaciones
 
